@@ -1,0 +1,48 @@
+.previewWrapper {
+  float: right;
+  height: 1000px;
+  width: 600px;
+  margin-top: 100px;
+  margin-right: 100px;
+  border: 1px solid;
+  box-sizing: border-box;
+}
+
+.top {
+  height: 200px;
+  width: 100%;
+  background-color: rgb(89, 160, 226);
+  display: flex;
+}
+
+.image {
+  height: 150px;
+  width: 150px;
+  margin: 25px;
+  border: 1px solid;
+  border-radius: 75px;
+  box-sizing: border-box;
+}
+
+.nameWrapper {
+  width: 300px;
+  margin: 25px;
+  word-wrap: break-word;
+}
+
+.detailsWrapper {
+  flex: 1 1 0;
+  margin-top: 25px;
+  margin-right: 25px;
+  text-align: right;
+}
+
+.border {
+  border-bottom: 1px solid;
+  padding-bottom: 10px;
+}
+
+.wrapper {
+  margin: 25px;
+  word-break: break-all;
+}
