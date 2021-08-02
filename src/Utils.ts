@@ -131,4 +131,14 @@ export function pushSkillState(
   ]);
 }
 
+export function removeState<T>(
+  state: T[],
+  setState: React.Dispatch<React.SetStateAction<T[]>>
+): void {
+  if (state.length <= 1) return;
+  const copy = [...state];
+  copy.splice(copy.length - 1, 1);
+  setState(copy);
+}
+
 export default handleOnchange;

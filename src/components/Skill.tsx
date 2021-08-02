@@ -1,5 +1,6 @@
-import { Add } from '@material-ui/icons';
-import { SkillProps, handleSkill, pushSkillState } from '../Utils';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
+import { SkillProps, handleSkill, pushSkillState, removeState } from '../Utils';
 
 interface Props {
   professionalSkills: SkillProps[];
@@ -19,10 +20,16 @@ const Skill: React.FC<Props> = ({
       <div>
         <div className="flex">
           <h3>Professional Skills</h3>
-          <Add
+          <AddCircleOutlineIcon
             className="icon"
             onClick={() =>
               pushSkillState(professionalSkills, setProfessionalSkills)
+            }
+          />
+          <RemoveCircleOutlineIcon
+            className="icon"
+            onClick={() =>
+              removeState(professionalSkills, setProfessionalSkills)
             }
           />
         </div>
@@ -42,9 +49,15 @@ const Skill: React.FC<Props> = ({
       <div>
         <div className="flex">
           <h3>Soft Skills</h3>
-          <Add
+          <AddCircleOutlineIcon
             className="icon"
             onClick={() => pushSkillState(softSkills, setSoftSkills)}
+          />
+          <RemoveCircleOutlineIcon
+            className="icon"
+            onClick={() =>
+              removeState(professionalSkills, setProfessionalSkills)
+            }
           />
         </div>
         {softSkills.map((arg, index) => {

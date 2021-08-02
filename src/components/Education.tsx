@@ -1,4 +1,5 @@
-import { Add } from '@material-ui/icons';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import {
   WorkProps,
   handleName,
@@ -6,6 +7,7 @@ import {
   handleFrom,
   handleDetails,
   pushWorkState,
+  removeState,
 } from '../Utils';
 
 interface Props {
@@ -21,11 +23,15 @@ const Education: React.FC<Props> = ({
     <div>
       <div className="flex">
         <h3>Education</h3>
-        <Add
+        <AddCircleOutlineIcon
           className="icon"
           onClick={() =>
             pushWorkState(education, setEducation, 'Institution Name')
           }
+        />
+        <RemoveCircleOutlineIcon
+          className="icon"
+          onClick={() => removeState(education, setEducation)}
         />
       </div>
       {education.map((arg, index) => {
