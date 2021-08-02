@@ -1,82 +1,104 @@
+import { WorkProps, SkillProps } from '../Utils';
 import './Preview.css';
 
-const arg = 'a';
+interface Props {
+  name: string;
+  title: string;
+  phone: string;
+  email: string;
+  location: string;
+  description: string;
+  work: WorkProps[];
+  education: WorkProps[];
+  professionalSkills: SkillProps[];
+  softSkills: SkillProps[];
+}
 
-const Preview = (): JSX.Element => {
+const Preview: React.FC<Props> = ({
+  name,
+  title,
+  phone,
+  email,
+  location,
+  description,
+  work,
+  education,
+  professionalSkills,
+  softSkills,
+}): JSX.Element => {
   return (
     <div className="previewWrapper">
       <div className="top">
         <div className="image" />
         <div className="nameWrapper">
-          <h1>{arg}</h1>
-          <h2>{arg}</h2>
+          <h1>{name}</h1>
+          <h2>{title}</h2>
         </div>
         <div className="detailsWrapper">
-          <p>{arg}</p>
-          <p>{arg}</p>
-          <p>{arg}</p>
+          <p>{phone}</p>
+          <p>{email}</p>
+          <p>{location}</p>
         </div>
       </div>
       <div className="wrapper">
         <h3 className="border">PROFILE</h3>
-        <p>{arg}</p>
+        <p>{description}</p>
       </div>
       <div className="wrapper">
         <h3 className="border">WORK EXPERIENCE</h3>
-        {/* {experience.map((arg) => {
+        {work.map((arg) => {
           return (
-            <div key={uuidv4()} className="flex">
+            <div key={arg.id} className="flex">
               <div className="companyWrapper">
-                <h5>{arg[0].name}</h5>
+                <h5>{arg.Name}</h5>
                 <div className="flex">
-                  <h5>{arg[1].name}</h5> &nbsp; - &nbsp; <h5>{arg[2].name}</h5>
+                  <h5>{arg.From}</h5> &nbsp; - &nbsp; <h5>{arg.To}</h5>
                 </div>
               </div>
-              <p className="text">{arg[3].name}</p>
+              <p className="text">{arg.Details}</p>
             </div>
           );
-        })} */}
+        })}
       </div>
       <div className="wrapper">
         <h3 className="border">EDUCATION</h3>
-        {/* {education.map((arg) => {
+        {education.map((arg) => {
           return (
-            <div key={uuidv4()} className="flex">
+            <div key={arg.id} className="flex">
               <div className="companyWrapper">
-                <h5>{arg[0].name}</h5>
+                <h5>{arg.Name}</h5>
                 <div className="flex">
-                  <h5>{arg[1].name}</h5> &nbsp; - &nbsp; <h5>{arg[2].name}</h5>
+                  <h5>{arg.From}</h5> &nbsp; - &nbsp; <h5>{arg.To}</h5>
                 </div>
               </div>
-              <p className="text">{arg[3].name}</p>
+              <p className="text">{arg.Details}</p>
             </div>
           );
-        })} */}
+        })}
       </div>
       <div className="wrapper">
         <h3 className="border">PROFESSIONAL SKILLS</h3>
         <div className="flexWrap">
-          {/* {proSkills.map((arg) => {
+          {professionalSkills.map((arg) => {
             return (
-              <p key={uuidv4()} className="skill">
-                {arg[0].name}
+              <p key={arg.id} className="skill">
+                {arg.skill}
               </p>
             );
           })}
-        </div> */}
         </div>
       </div>
       <div className="wrapper">
         <h3 className="border">SOFT SKILLS</h3>
-        {/* <div className="flexWrap">
-            {skills.map((arg) => {
+        <div className="flexWrap">
+          {softSkills.map((arg) => {
             return (
-              <p key={uuidv4()} className="skill">
-                {arg[0].name}
+              <p key={arg.id} className="skill">
+                {arg.skill}
               </p>
             );
           })}
-          </div> */}
+        </div>
       </div>
     </div>
   );

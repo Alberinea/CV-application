@@ -1,41 +1,62 @@
-const Skill = (): JSX.Element => {
+import { Add } from '@material-ui/icons';
+import { SkillProps, handleSkill, pushSkillState } from '../Utils';
+
+interface Props {
+  professionalSkills: SkillProps[];
+  setProfessionalSkills: React.Dispatch<React.SetStateAction<SkillProps[]>>;
+  softSkills: SkillProps[];
+  setSoftSkills: React.Dispatch<React.SetStateAction<SkillProps[]>>;
+}
+
+const Skill: React.FC<Props> = ({
+  professionalSkills,
+  setProfessionalSkills,
+  softSkills,
+  setSoftSkills,
+}): JSX.Element => {
   return (
     <>
       <div>
         <div className="flex">
           <h3>Professional Skills</h3>
-          {/* <Add className="icon" /> */}
+          <Add
+            className="icon"
+            onClick={() =>
+              pushSkillState(professionalSkills, setProfessionalSkills)
+            }
+          />
         </div>
-        {/* {proSkills.map((arg) =>
-            arg.map(({ name, setState }) => {
-              return (
-                <input
-                  key={uuidv4()}
-                  type="text"
-                  placeholder={name}
-                  onInput={(e) => setState(e.currentTarget.value)}
-                />
-              );
-            })
-          )} */}
+        {professionalSkills.map((arg, index) => {
+          return (
+            <input
+              key={arg.id}
+              type="text"
+              placeholder="Professional Skill"
+              onChange={(e) =>
+                handleSkill(e, professionalSkills, setProfessionalSkills, index)
+              }
+            />
+          );
+        })}
       </div>
       <div>
         <div className="flex">
           <h3>Soft Skills</h3>
-          {/* <Add className="icon" /> */}
+          <Add
+            className="icon"
+            onClick={() => pushSkillState(softSkills, setSoftSkills)}
+          />
         </div>
-        {/* {skills.map((arg) =>
-            arg.map(({ name, setState }) => {
-              return (
-                <input
-                  key={uuidv4()}
-                  type="text"
-                  placeholder={name}
-                  onInput={(e) => setState(e.currentTarget.value)}
-                />
-              );
-            })
-          )} */}
+        {softSkills.map((arg, index) => {
+          return (
+            <input
+              key={arg.id}
+              type="text"
+              placeholder="Soft Skill"
+              onChange={(e) => handleSkill(e, softSkills, setSoftSkills, index)}
+            />
+          );
+        })}
       </div>
     </>
   );
