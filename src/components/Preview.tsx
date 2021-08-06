@@ -8,6 +8,7 @@ interface Props {
   email: string;
   location: string;
   description: string;
+  image: string;
   work: WorkProps[];
   education: WorkProps[];
   professionalSkills: SkillProps[];
@@ -20,6 +21,7 @@ const Preview: React.FC<Props> = ({
   phone,
   email,
   location,
+  image,
   description,
   work,
   education,
@@ -29,7 +31,9 @@ const Preview: React.FC<Props> = ({
   return (
     <div className="previewWrapper">
       <div className="top">
-        <div className="image" />
+        <div className="imageWrapper">
+          <img src={image} alt="Profile" />
+        </div>
         <div className="nameWrapper">
           <h1>{name}</h1>
           <h2>{title}</h2>

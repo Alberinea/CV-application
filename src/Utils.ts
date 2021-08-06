@@ -31,6 +31,24 @@ function handleOnchange(
   }
 }
 
+export function handleImage(
+  e: React.ChangeEvent<HTMLInputElement>,
+  setState: React.Dispatch<React.SetStateAction<string>>
+): void {
+  if (!e.target.files) return;
+  const reader = new FileReader();
+  const file = e.target.files[0];
+  const afterDot = file?.name.split('.').pop();
+  const imageExtensions = ['png', 'jpg', 'jpeg', 'jfif', 'pjpeg', 'pjp'];
+  if (file && afterDot && imageExtensions.includes(afterDot)) {
+    reader.onload = () => {
+      if (reader.readyState === 2 && typeof reader.result === 'string')
+        setState(reader.result);
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
 export function handleName(
   e: React.ChangeEvent<HTMLInputElement>,
   state: WorkProps[],

@@ -1,3 +1,12 @@
+h5 {
+  margin: 5px 0;
+}
+
+img {
+  border-radius: 75px;
+}
+
+
 .previewWrapper {
   float: right;
   height: 1000px;
@@ -15,13 +24,14 @@
   display: flex;
 }
 
-.image {
+.imageWrapper,
+img {
   height: 150px;
   width: 150px;
+}
+
+.imageWrapper {
   margin: 25px;
-  border: 1px solid;
-  border-radius: 75px;
-  box-sizing: border-box;
 }
 
 .nameWrapper {
@@ -74,6 +84,3 @@
   border-radius: 5px;
 }
 
-h5 {
-  margin: 5px 0;
-}

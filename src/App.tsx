@@ -10,12 +10,16 @@ import Education from './components/Education';
 import Skill from './components/Skill';
 import './App.css';
 
+const DEFAULT_PROFILE =
+  'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png';
+
 const App = (): JSX.Element => {
   const [name, setName] = useState('Name');
   const [title, setTitle] = useState('Title');
   const [phone, setPhone] = useState('Phone');
   const [email, setEmail] = useState('E-mail');
   const [location, setLocation] = useState('Location');
+  const [image, setImage] = useState(DEFAULT_PROFILE);
   const [description, setDescription] = useState(PLACEHOLDER);
   const [work, setWork] = useState([
     {
@@ -42,7 +46,7 @@ const App = (): JSX.Element => {
 
   return (
     <>
-      <Header />
+      <Header setImage={setImage} />
       <div className="inputWrapper">
         <Personal
           setName={setName}
@@ -67,6 +71,7 @@ const App = (): JSX.Element => {
         phone={phone}
         email={email}
         location={location}
+        image={image}
         description={description}
         work={work}
         education={education}
@@ -79,7 +84,6 @@ const App = (): JSX.Element => {
 
 export default App;
 
-// TODO Add remove
 // TODO Add change theme color
 // TODO Add pdf converter
 // TODO Fix styling eg. scalable height and some positioning
