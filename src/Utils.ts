@@ -153,7 +153,7 @@ export function removeState<T>(
   state: T[],
   setState: React.Dispatch<React.SetStateAction<T[]>>
 ): void {
-  if (state.length <= 1) return;
+  if (state.length <= 0) return;
   const copy = [...state];
   copy.splice(copy.length - 1, 1);
   setState(copy);

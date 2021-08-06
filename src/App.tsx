@@ -8,12 +8,13 @@ import Description, { PLACEHOLDER } from './components/Description';
 import Work from './components/Work';
 import Education from './components/Education';
 import Skill from './components/Skill';
-import './App.css';
+import './styles/App.css';
 
 const DEFAULT_PROFILE =
   'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png';
 
 const App = (): JSX.Element => {
+  const [color, setColor] = useState('#59A0E2');
   const [name, setName] = useState('Name');
   const [title, setTitle] = useState('Title');
   const [phone, setPhone] = useState('Phone');
@@ -46,7 +47,7 @@ const App = (): JSX.Element => {
 
   return (
     <>
-      <Header setImage={setImage} />
+      <Header setImage={setImage} setColor={setColor} />
       <div className="inputWrapper">
         <Personal
           setName={setName}
@@ -66,6 +67,7 @@ const App = (): JSX.Element => {
         />
       </div>
       <Preview
+        color={color}
         name={name}
         title={title}
         phone={phone}
@@ -84,6 +86,5 @@ const App = (): JSX.Element => {
 
 export default App;
 
-// TODO Add change theme color
 // TODO Add pdf converter
 // TODO Fix styling eg. scalable height and some positioning

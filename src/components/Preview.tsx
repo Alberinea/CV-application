@@ -1,7 +1,8 @@
 import { WorkProps, SkillProps } from '../Utils';
-import './Preview.css';
+import '../styles/Preview.css';
 
 interface Props {
+  color: string;
   name: string;
   title: string;
   phone: string;
@@ -16,6 +17,7 @@ interface Props {
 }
 
 const Preview: React.FC<Props> = ({
+  color,
   name,
   title,
   phone,
@@ -30,7 +32,7 @@ const Preview: React.FC<Props> = ({
 }): JSX.Element => {
   return (
     <div className="previewWrapper">
-      <div className="top">
+      <div className="top" style={{ backgroundColor: color }}>
         <div className="imageWrapper">
           <img src={image} alt="Profile" />
         </div>
@@ -45,11 +47,17 @@ const Preview: React.FC<Props> = ({
         </div>
       </div>
       <div className="wrapper">
-        <h3 className="border">PROFILE</h3>
+        <h3 className="border" style={{ borderBottom: `1px solid ${color}` }}>
+          PROFILE
+        </h3>
         <p>{description}</p>
       </div>
       <div className="wrapper">
-        <h3 className="border">WORK EXPERIENCE</h3>
+        {work.length > 0 && (
+          <h3 className="border" style={{ borderBottom: `1px solid ${color}` }}>
+            WORK EXPERIENCE
+          </h3>
+        )}
         {work.map((arg) => {
           return (
             <div key={arg.id} className="flex">
@@ -65,7 +73,11 @@ const Preview: React.FC<Props> = ({
         })}
       </div>
       <div className="wrapper">
-        <h3 className="border">EDUCATION</h3>
+        {education.length > 0 && (
+          <h3 className="border" style={{ borderBottom: `1px solid ${color}` }}>
+            EDUCATION
+          </h3>
+        )}
         {education.map((arg) => {
           return (
             <div key={arg.id} className="flex">
@@ -81,11 +93,19 @@ const Preview: React.FC<Props> = ({
         })}
       </div>
       <div className="wrapper">
-        <h3 className="border">PROFESSIONAL SKILLS</h3>
+        {professionalSkills.length > 0 && (
+          <h3 className="border" style={{ borderBottom: `1px solid ${color}` }}>
+            PROFESSIONAL SKILLS
+          </h3>
+        )}
         <div className="flexWrap">
           {professionalSkills.map((arg) => {
             return (
-              <p key={arg.id} className="skill">
+              <p
+                key={arg.id}
+                className="skill"
+                style={{ backgroundColor: color }}
+              >
                 {arg.skill}
               </p>
             );
@@ -93,11 +113,19 @@ const Preview: React.FC<Props> = ({
         </div>
       </div>
       <div className="wrapper">
-        <h3 className="border">SOFT SKILLS</h3>
+        {softSkills.length > 0 && (
+          <h3 className="border" style={{ borderBottom: `1px solid ${color}` }}>
+            SOFT SKILLS
+          </h3>
+        )}
         <div className="flexWrap">
           {softSkills.map((arg) => {
             return (
-              <p key={arg.id} className="skill">
+              <p
+                key={arg.id}
+                className="skill"
+                style={{ backgroundColor: color }}
+              >
                 {arg.skill}
               </p>
             );

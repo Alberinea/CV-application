@@ -55,9 +55,7 @@ const Skill: React.FC<Props> = ({
           />
           <RemoveCircleOutlineIcon
             className="icon"
-            onClick={() =>
-              removeState(professionalSkills, setProfessionalSkills)
-            }
+            onClick={() => removeState(softSkills, setSoftSkills)}
           />
         </div>
         {softSkills.map((arg, index) => {
