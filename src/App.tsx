@@ -90,6 +90,3 @@ const App = (): JSX.Element => {
 };
 
 export default App;
-
-// TODO Add pdf converter
-// TODO Fix styling eg. scalable height and some positioning and some icons

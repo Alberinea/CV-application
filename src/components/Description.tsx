@@ -14,6 +14,7 @@ const Description: React.FC<Props> = ({ setDescription }): JSX.Element => {
       <textarea
         placeholder="Description"
         onChange={(e) => handleOnchange(e, setDescription, PLACEHOLDER)}
+        maxLength={800}
       />
     </div>
   );

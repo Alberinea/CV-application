@@ -37,21 +37,25 @@ const Work: React.FC<Props> = ({ work, setWork }): JSX.Element => {
               type="text"
               placeholder={Object.keys(arg)[1]}
               onChange={(e) => handleName(e, work, setWork, index)}
+              maxLength={50}
             />
             <input
               type="text"
               placeholder={Object.keys(arg)[2]}
               onChange={(e) => handleFrom(e, work, setWork, index)}
+              maxLength={12}
             />
             <input
               type="text"
               placeholder={Object.keys(arg)[3]}
               onChange={(e) => handleTo(e, work, setWork, index)}
+              maxLength={12}
             />
             <input
               type="text"
               placeholder={Object.keys(arg)[4]}
               onChange={(e) => handleDetails(e, work, setWork, index)}
+              maxLength={300}
             />
           </div>
         );

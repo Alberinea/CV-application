@@ -39,6 +39,7 @@ const Skill: React.FC<Props> = ({
               key={arg.id}
               type="text"
               placeholder="Professional Skill"
+              maxLength={30}
               onChange={(e) =>
                 handleSkill(e, professionalSkills, setProfessionalSkills, index)
               }
@@ -64,6 +65,7 @@ const Skill: React.FC<Props> = ({
               key={arg.id}
               type="text"
               placeholder="Soft Skill"
+              maxLength={30}
               onChange={(e) => handleSkill(e, softSkills, setSoftSkills, index)}
             />
           );

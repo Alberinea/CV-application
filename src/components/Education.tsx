@@ -41,21 +41,25 @@ const Education: React.FC<Props> = ({
               type="text"
               placeholder={Object.keys(arg)[1]}
               onChange={(e) => handleName(e, education, setEducation, index)}
+              maxLength={50}
             />
             <input
               type="text"
               placeholder={Object.keys(arg)[2]}
               onChange={(e) => handleFrom(e, education, setEducation, index)}
+              maxLength={12}
             />
             <input
               type="text"
               placeholder={Object.keys(arg)[3]}
               onChange={(e) => handleTo(e, education, setEducation, index)}
+              maxLength={12}
             />
             <input
               type="text"
               placeholder={Object.keys(arg)[4]}
               onChange={(e) => handleDetails(e, education, setEducation, index)}
+              maxLength={300}
             />
           </div>
         );

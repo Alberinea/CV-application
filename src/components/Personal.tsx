@@ -22,31 +22,31 @@ const Personal: React.FC<Props> = ({
         type="text"
         placeholder="Name"
         onChange={(e) => handleOnchange(e, setName, 'Name')}
-        required
+        maxLength={28}
       />
       <input
         type="text"
         placeholder="Title"
         onChange={(e) => handleOnchange(e, setTitle, 'Title')}
-        required
+        maxLength={38}
       />
       <input
         type="text"
         placeholder="Phone"
         onChange={(e) => handleOnchange(e, setPhone, 'Phone')}
-        required
+        maxLength={15}
       />
       <input
         type="text"
         placeholder="E-mail"
         onChange={(e) => handleOnchange(e, setEmail, 'E-mail')}
-        required
+        maxLength={30}
       />
       <input
         type="text"
         placeholder="Location"
         onChange={(e) => handleOnchange(e, setLocation, 'Location')}
-        required
+        maxLength={60}
       />
     </div>
   );

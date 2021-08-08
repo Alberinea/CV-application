@@ -1,4 +1,5 @@
 import React from 'react';
+import download from 'downloadjs';
 import { toPng } from 'html-to-image';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -13,11 +14,8 @@ const HtmlToImage = React.forwardRef<HTMLDivElement>(
         style: { margin: '0' },
       };
 
-      const capture = await toPng(ref.current, params);
-      const link = document.createElement('a');
-      link.download = 'CV.png';
-      link.href = capture;
-      link.click();
+      const link = await toPng(ref.current, params);
+      download(link, 'CV.png');
     }
 
     return (

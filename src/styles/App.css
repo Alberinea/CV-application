@@ -10,7 +10,7 @@ body {
 
 .inputWrapper {
   float: left;
-  height: 1400px;
+  height: auto;
   width: 800px;
   box-sizing: border-box;
   border: 1px solid;

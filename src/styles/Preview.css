@@ -8,7 +8,7 @@ img {
 
 .previewWrapper {
   float: right;
-  height: 1000px;
+  height: auto;
   width: 600px;
   margin: 100px 100px 0 0;
   border: 1px solid;
@@ -32,16 +32,25 @@ img {
 }
 
 .nameWrapper {
-  width: 300px;
-  margin: 25px;
+  width: 200px;
+  margin: 15px;
   word-wrap: break-word;
 }
 
+.iconsWrapper {
+  margin: 25px 25px 0 0;
+}
+
 .detailsWrapper {
-  flex: 1 1 0;
-  margin-top: 25px;
-  margin-right: 25px;
+  margin: 25px 10px 0 0;
+  flex: 1 0 0;
   text-align: right;
+  word-wrap: break-word;
+  max-width: 110px;
+}
+
+.detailsWrapper > p {
+  padding-bottom: 8px;
 }
 
 .border {
@@ -64,7 +73,7 @@ img {
 }
 
 .companyWrapper {
-  width: 100px;
+  width: 120px;
   padding-right: 20px;
 }
 
@@ -77,4 +86,12 @@ img {
   margin-right: 10px;
   padding: 4px 8px;
   border-radius: 5px;
+}
+
+.icons {
+  font-size: 18px !important;
+}
+
+.iconsBig {
+  font-size: 12px !important;
 }
