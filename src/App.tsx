@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { v4 } from 'uuid';
 import { MEDIUM_PLACEHOLDER } from './Utils';
 import Header from './components/Header';
@@ -8,12 +8,15 @@ import Description, { PLACEHOLDER } from './components/Description';
 import Work from './components/Work';
 import Education from './components/Education';
 import Skill from './components/Skill';
+import HtmlToImage from './components/HtmlToImage';
 import './styles/App.css';
 
 const DEFAULT_PROFILE =
   'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png';
 
 const App = (): JSX.Element => {
+  const downloadRef = useRef<HTMLDivElement>(null);
+
   const [color, setColor] = useState('#59A0E2');
   const [name, setName] = useState('Name');
   const [title, setTitle] = useState('Title');
@@ -65,8 +68,10 @@ const App = (): JSX.Element => {
           softSkills={softSkills}
           setSoftSkills={setSoftSkills}
         />
+        <HtmlToImage ref={downloadRef} />
       </div>
       <Preview
+        ref={downloadRef}
         color={color}
         name={name}
         title={title}
@@ -87,4 +92,4 @@ const App = (): JSX.Element => {
 export default App;
 
 // TODO Add pdf converter
-// TODO Fix styling eg. scalable height and some positioning
+// TODO Fix styling eg. scalable height and some positioning and some icons
